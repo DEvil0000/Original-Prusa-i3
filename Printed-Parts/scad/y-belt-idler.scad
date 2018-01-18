@@ -57,7 +57,38 @@ module Y_belt_idler()
         { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
     }
     
-}   
+}
+
+module Y_belt_idler_holder()
+{
+    difference() {
+        //base block
+        translate([-12.5,0,-20]) cube([25,26,35+20+5]);
+        
+        //item hole
+        translate([-30,3,-21]) cube([60,20,21]);
+        
+        //idler hole
+        translate([-12.6,-0.1,3]) cube([26,20,38]);
+        
+        //screws
+        translate([-1.65/2,-0.1+18,4]) cube([1.65,10,35]);
+        translate([0,-0.1+18+6.5,4]) rotate([0,0,45]) cube([2.5,2.5,35]);
+        
+        translate([0,13,3]) rotate([180,0,0]) cylinder( h=25, r=1.65, $fn=30 );
+        translate([0,13,3.01]) rotate([180,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 
+        translate([0,26,-10]) rotate([90,0,0]) cylinder( h=25, r=1.65, $fn=30 );
+        translate([0,26.01,-10]) rotate([90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 
+        translate([0,0,-10]) rotate([-90,0,0]) cylinder( h=25, r=1.65, $fn=30 );
+        translate([0,-0.01,-10]) rotate([-90,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 
+        
+        //version   
+            translate([3.5,-0.5+26,20-21]) rotate([90,0,180]) linear_extrude(height = 0.6) 
+        { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+    }
+       
+}
     
 rotate([-90,0,0]) Y_belt_idler(); 
+rotate([-90,0,0]) Y_belt_idler_holder(); 
 

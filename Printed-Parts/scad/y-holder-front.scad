@@ -26,7 +26,7 @@ module part()
         {
             // body block
             translate([-13,0,0]) cube([26,10,12]);
-            translate([-4,0,-1.5]) cube([8,10,2]);
+            translate([-13,0,-20]) cube([26,10,20]);
         }
 
         // y-axis cut
@@ -41,6 +41,16 @@ module part()
         translate([5.5,9,3.5]) rotate([90,0,0]) cylinder( h=20, r=1.75, $fn=30 );
         translate([-5.5,1,3.5]) rotate([90,0,0]) cylinder( h=2, r1=1.75, r2=2.6, $fn=30 );
         translate([5.5,1,3.5]) rotate([90,0,0]) cylinder( h=2, r1=1.75, r2=2.6, $fn=30 );
+        
+        translate([0,2.6,-5]) cylinder( h=20, r=1.75, $fn=30 );
+        translate([0,2.6,4.5]) cylinder( h=2, r1=1.75, r2=2.6, $fn=30 );
+        translate([0,2.6,6.49]) cylinder( h=2, r=2.6, $fn=30 );
+        
+         translate([0,5,-10]) rotate([0,90,0])  cylinder( h=20, r=1.75, $fn=30 );
+        translate([11.5,5,-10]) rotate([0,90,0])  cylinder( h=2, r1=1.75, r2=2.6, $fn=30 );
+        
+         translate([0,5,-10]) rotate([0,-90,0])  cylinder( h=20, r=1.75, $fn=30 );
+        translate([-11.5,5,-10]) rotate([0,-90,0])  cylinder( h=2, r1=1.75, r2=2.6, $fn=30 );
 
         // ziptie
         translate([7.8,8,9]) ziptie_round_edge();
@@ -56,8 +66,9 @@ module part()
         // upper corners
         translate([4,-1,20]) rotate([0,60,0]) cube([20,30,20]);
         translate([-21.2,-1,30]) rotate([0,120,0]) cube([20,30,20]);
-        translate([-5,-6,-2]) cube([10,10,2]);
-        translate([-15,10,-6.5]) rotate([45,0,0]) cube([30,5,5]);
+        //translate([-5,-6,-2]) cube([10,10,2]);
+        //translate([-15,10,-6.5]) rotate([45,0,0]) cube([30,5,5]);
+        translate([-10,-0.5,-20]) cube([20,11,20]);
 
     }
 }

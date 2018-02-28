@@ -16,8 +16,10 @@ translate([-75,-10+160,0])cube([150,20,20]);
 translate([-75,-10-160,0])cube([150,20,20]);
 
 //nema 17 stepper
-translate([0,170,0])color([0.5,1,0])cube([42,42,26*2]);
-translate([-20,170+21,26])rotate([0,90,0])color([0.5,1,0])cylinder(h=20,d=inner_pully_d);
+translate([5,170,0])color([0.5,1,0])cube([42,42,26*2]);
+translate([-20+5,170+21,26])rotate([0,90,0])color([0.5,1,0])cylinder(h=20,d=inner_pully_d);
+translate([-20+5,170+21,26])rotate([0,90,0])color([0.5,1,0])cylinder(h=3,d=outer_pully_d);
+translate([0,170+21,26])rotate([0,90,0])color([0.5,1,0])cylinder(h=3,d=outer_pully_d);
 
 //belt
 translate([-3,-200,-1+26-inner_pully_d/2])color([0.7,0.2,0.2])cube([6,400,2]);

@@ -17,7 +17,7 @@ module ziptie_round_edge()
 }
 
 
-module part()    
+module rod_holder()    
 {
 
     difference()
@@ -73,6 +73,6 @@ module part()
     }
 }
 
-rotate([-90,0,0]) part();
+rotate([-90,0,0]) rod_holder();
 
 

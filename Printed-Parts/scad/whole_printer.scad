@@ -4,6 +4,8 @@ use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/y-holder-front.scad
 
 use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/lm8uu_holder_cyl.scad>;
 
+use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/y-belt-holder.scad>;
+
 inner_pully_d = 14;
 outer_pully_d = 20;
 
@@ -45,3 +47,6 @@ translate([0,-147,20])rotate([0,0,180])Y_belt_idler_holder();
 
 //bed holder
 translate([-215/2,-215/2,40])cube([215,215,6]);
+
+//belt holder
+translate([0,0,-6.5-6])y_belt_holder();

@@ -1,3 +1,5 @@
+module lm8uu_holder_clamp()
+{
 difference() {
   difference() {
     difference() {
@@ -56,3 +58,6 @@ difference() {
   } // End rotate
   } // End translate
 } // End difference
+}
+
+lm8uu_holder_clamp();

@@ -72,8 +72,8 @@ module Y_belt_idler_holder()
         translate([-12.6,-0.1,3]) cube([26,20,38]);
         
         //screws
-        translate([-1.65/2,-0.1+18,4]) cube([1.65,10,35]);
-        translate([0,-0.1+18+6.5,4]) rotate([0,0,45]) cube([2.5,2.5,35]);
+        translate([-1.65,-0.1+18,4]) cube([1.65*2,10,35]);
+        //translate([0,-0.1+18+4.5,4]) rotate([0,0,45]) cube([1.65*3,1.65*3,35]);
         
         translate([0,13,3]) rotate([180,0,0]) cylinder( h=25, r=1.65, $fn=30 );
         translate([0,13,3.01]) rotate([180,0,0]) cylinder( h=2, r=2.5, r2=1.65,$fn=30 ); 

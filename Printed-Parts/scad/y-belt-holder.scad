@@ -13,12 +13,16 @@ module y_belt_holder()
         // base block
         union()
         {
-            translate([-7,-24,44.5]) cube([14,48,8]);
+            //6.5 mm lower
+            translate([-17.5,-20,41]) cube([35,40,5]);
             translate([-5,-15,29]) cube([12,30,17]);
         }
 
         // belt entry 
-        translate([-7.5,-16,39.9]) rotate([0,45,0]) cube([3,32,3]);
+        difference() {
+            translate([-7.5,-16,39.9]) rotate([0,45,0]) cube([3,32,3]);
+            translate([-7,-16,41]) cube([3,32,3]);
+        }
         translate([-7.5,-16,34.9]) rotate([0,45,0]) cube([3,32,3]);
         
         // lower belt slot
@@ -43,26 +47,21 @@ module y_belt_holder()
         translate([-8,-20,21.8]) rotate([45,0,0]) cube([16,10,10]);
         translate([-8,20,21.8]) rotate([45,0,0]) cube([16,10,10]);
 
-        translate([-8,-30,37]) rotate([45,0,0]) cube([16,10,10]);
-        translate([-8,30,37]) rotate([45,0,0]) cube([16,10,10]);
-        translate([-12.2,-30,44.4]) rotate([0,45,0]) cube([5,60,5]);
+        translate([-20,-25,33.5]) rotate([45,0,0]) cube([40,10,10]);
+        translate([-20,25,33.5]) rotate([45,0,0]) cube([40,10,10]);
+        translate([-22.2,-30,40.8]) rotate([0,45,0]) cube([5,60,5]);
         
         // mounting screw holes
-        translate([0,-19.50,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.50,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,-19.25,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.25,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,-19.0,40]) cylinder( h=30, r=1.65, $fn=30 );
-        translate([0,19.0,40]) cylinder( h=30, r=1.65, $fn=30 );
+        translate([-12,-14.5,40]) cylinder( h=30, r=1.65, $fn=30 );
+        translate([12,14.50,40]) cylinder( h=30, r=1.65, $fn=30 );
+        translate([-12,14.5,40]) cylinder( h=30, r=1.65, $fn=30 );
+        translate([12,-14.50,40]) cylinder( h=30, r=1.65, $fn=30 );
         
-        translate([0,-19.5,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.5,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,-19.25,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.25,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,-19.0,43.5]) cylinder( h=7, r=3.1, $fn=30 );
-        translate([0,19.0,43.5]) cylinder( h=7, r=3.1, $fn=30 );
+        translate([-12,-14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([12,14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([-12,14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([12,-14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
         
-    
     }
  
 
@@ -72,7 +71,7 @@ difference()
 {
     translate([-40,0,7]) rotate([0,90,0]) y_belt_holder();
     //version   
-    translate([8.5,3.5,0.5]) rotate([0,180,90]) linear_extrude(height = 0.6) 
-    { text("R1",font = "helvetica:style=Bold", size=4, center=true); }
+    translate([-1,3.5,0.5]) rotate([0,180,90]) linear_extrude(height = 0.6) 
+    { text("R2",font = "helvetica:style=Bold", size=4, center=true); }
 }
     

@@ -13,10 +13,14 @@ module y_belt_holder()
         // base block
         union()
         {
-            //6.5 mm lower
+            // 6.5mm lower
             translate([-17.5,-20,41]) cube([35,40,5]);
-            translate([-5,-15,29]) cube([12,30,17]);
+            // 1mm lower again
+            translate([-5,-15,30]) cube([12,30,16]);
         }
+        
+        // 2.5mm lower again
+        translate([-18,-20.5,41+2.5]) cube([36,41,2.51]);
 
         // belt entry 
         difference() {
@@ -44,12 +48,12 @@ module y_belt_holder()
         }
         
         // nice edges
-        translate([-8,-20,21.8]) rotate([45,0,0]) cube([16,10,10]);
-        translate([-8,20,21.8]) rotate([45,0,0]) cube([16,10,10]);
+        translate([-8,-20,22.5]) rotate([45,0,0]) cube([16,10,10]);
+        translate([-8,20,22.5]) rotate([45,0,0]) cube([16,10,10]);
 
         translate([-20,-25,33.5]) rotate([45,0,0]) cube([40,10,10]);
         translate([-20,25,33.5]) rotate([45,0,0]) cube([40,10,10]);
-        translate([-22.2,-30,40.8]) rotate([0,45,0]) cube([5,60,5]);
+        translate([-22.2,-30,40.3]) rotate([0,45,0]) cube([5,60,5]);
         
         // mounting screw holes
         translate([-12,-14.5,40]) cylinder( h=30, r=1.65, $fn=30 );
@@ -57,10 +61,10 @@ module y_belt_holder()
         translate([-12,14.5,40]) cylinder( h=30, r=1.65, $fn=30 );
         translate([12,-14.50,40]) cylinder( h=30, r=1.65, $fn=30 );
         
-        translate([-12,-14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
-        translate([12,14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
-        translate([-12,14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
-        translate([12,-14.5,36.5]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([-12,-14.5,36]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([12,14.5,36]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([-12,14.5,36]) cylinder( h=7, r=3.1, $fn=6 );
+        translate([12,-14.5,36]) cylinder( h=7, r=3.1, $fn=6 );
         
     }
  

@@ -6,12 +6,16 @@ use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/lm8uu_holder_cyl.sc
 
 use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/y-belt-holder.scad>;
 
+use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/z-axis-bottom.scad>;
+
+use</home/alexander/git/Original-Prusa-i3/Printed-Parts/scad/z-axis-top.scad>;
+
 inner_pully_d = 12.3; // 16t -> 9.68 oder 20t -> 12.22
 outer_pully_d = 20;
 belt_height = 1.4 + 0.6; // belt is 1.38 + add some moving space
 
-show_frame = 0;
-show_functional = 1;
+show_frame = 1;
+show_functional = 0;
 show_rods = 0;
 show_bed_holder = 0;
 
@@ -21,6 +25,12 @@ if (show_frame) {
     translate([-10-75,-200,0])cube([20,400,20]);
     translate([-75,-10+160,0])cube([150,20,20]);
     translate([-75,-10-160,0])cube([150,20,20]);
+    
+    translate([-150-75,0,0])cube([150,20,20]);
+    translate([75,0,0])cube([150,20,20]);
+    translate([-200,0,250])cube([400,20,20]);
+    translate([-10+170,0,0])cube([20,20,250]);
+    translate([-10-170,0,0])cube([20,20,250]);
 }
 
 //nema 17 stepper
@@ -56,10 +66,8 @@ if (show_rods) {
 }
 
 //lm8uu holder clamps
-/*
 translate([75,0,20+10.5])rotate([-90,0,0])lm8uu_holder_clamp();
 translate([-75,0,20+10.5])rotate([-90,0,0])lm8uu_holder_clamp();
-*/
 
 //belt idler
 translate([0,-147-17,8])rotate([0,0,180])Y_belt_idler(); 
@@ -72,3 +80,9 @@ if (show_bed_holder) {
 
 //belt holder
 translate([0,0,-2.5])y_belt_holder();
+
+translate([150+40,0,50])rotate([180,0,-90])z_bottom_right();
+translate([-150-55,0,50])rotate([180,0,-90])z_bottom_left();
+
+translate([150+40,0,270])rotate([180,0,-90])z_top_right();
+translate([-150-55,0,270])rotate([180,0,-90])z_top_left();

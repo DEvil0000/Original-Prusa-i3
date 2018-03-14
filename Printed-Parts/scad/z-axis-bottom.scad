@@ -7,7 +7,7 @@
 
 module z_bottom_base()
 {
-     translate([0,-1.5,0]) cube([8,49,16+20]); // plate touching the base
+     translate([0,-1.5,0]) cube([8,49,5+48]); // plate touching the base
      translate([0,-5,0]) cube([30,4.01,22]); // plate touching the base
      translate([0,41.5,0]) cube([30,6.01,22]); // plate touching the base
      translate([0,-5,0]) cube([50,52.5,5]); // plate touching the base
@@ -16,12 +16,12 @@ module z_bottom_base()
 module z_bottom_fancy()
 {
     // corner cutouts
-    translate([0.5,-2.5,0]) rotate([0,0,-45-180]) translate([-15,0,-1]) cube([30,30,51]);
-    translate([0.5,40-0.5+5,0]) rotate([0,0,-45+90]) translate([-15,0,-1]) cube([30,30,51]);
+    translate([0.5,-2.5,0]) rotate([0,0,-45-180]) translate([-15,0,-1]) cube([30,30,55]);
+    translate([0.5,40-0.5+5,0]) rotate([0,0,-45+90]) translate([-15,0,-1]) cube([30,30,55]);
  
-    translate([8,0,12+20+6]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
-    translate([20,-2,12+8]) rotate([45,0,0]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
-    translate([25,20,12+30]) rotate([-45,0,0]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
+    //translate([8,0,12+20+6]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
+    //translate([20,-2,12+8]) rotate([45,0,0]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
+    //translate([25,20,12+30]) rotate([-45,0,0]) rotate([0,-90,0]) translate([0,-5,0]) cube([30,50,30]);
     translate([50-2.5,-5+2.5+67,0]) rotate([0,0,-45-90]) translate([-15,0,-1]) cube([30,30,51]);
     translate([50-2.5,-5+2.5,0]) rotate([0,0,-45-90]) translate([-15,0,-1]) cube([30,30,51]);
  
@@ -41,16 +41,14 @@ module z_bottom_fancy()
 module z_bottom_holes()
 {
     // Frame mounting screw holes
-    translate([-1,10,12]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
-    translate([-1,10+20,12]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
-    translate([-1,10+10,32]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
+    translate([-1,10,53-10]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
+    translate([-1,10+20,53-10]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
+    translate([-1,10+10,53-30]) rotate([0,90,0]) cylinder(h = 20, r=1.8, $fn=30);
 
     // Frame mounting screw head holes
-    translate([4,10,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+20,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+10,32]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+10-3.1,10+20+2]) cube([10,6.2,10]);
-    translate([4,10,38]) rotate([0,45,0]) cube([10,20,10]);
+    translate([4,10,53-10]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+20,53-10]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+10,53-30]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
 
     // Z rod holder
     translate([25+4.3,3,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.1, $fn=50);
@@ -87,7 +85,7 @@ module z_bottom_right()
             z_bottom_holes();
         }
         translate([7.5,25,12]) rotate([90,180,90]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
     }
 }
 
@@ -103,7 +101,7 @@ module z_bottom_left()
             z_bottom_holes();
         }
         translate([7.5,-28.5,12]) rotate([90,180,90]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }
+        { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
     }
 }
 

@@ -120,7 +120,7 @@ module x_end_idler()
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
         //version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=3, center=true); }   
+        { text("R2",font = "helvetica:style=Bold", size=3, center=true); }   
     }
     
     difference()

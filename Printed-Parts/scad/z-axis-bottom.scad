@@ -11,6 +11,7 @@ module z_bottom_base()
      translate([0,-5,0]) cube([30,4.01,22]); // plate touching the base
      translate([0,41.5,0]) cube([30,6.01,22]); // plate touching the base
      translate([0,-5,0]) cube([50,52.5,5]); // plate touching the base
+     translate([25+4.3,3,-21])cylinder(r=7,h=21);
 }
 
 module z_bottom_fancy()
@@ -51,9 +52,9 @@ module z_bottom_holes()
     translate([4,10+10,53-30]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
 
     // Z rod holder
-    translate([25+4.3,3,-1]) rotate([0,0,0]) cylinder(h = 50, r=4.1, $fn=50);
-    translate([25+4.3,3,-1]) rotate([0,0,0]) cylinder(h = 2.6, r1=4.5, r2=4.1, $fn=50);
-    translate([25+4.3-1,3,0.6]) cube([2,10,7]); // it's bit up because it helps with printing
+    translate([25+4.3,3,-50-15]) rotate([0,0,0]) cylinder(h = 50, r=4.1, $fn=50);
+    translate([25+4.3,3,-1-21]) rotate([0,0,0]) cylinder(h = 2.6, r1=4.5, r2=4.1, $fn=50);
+    //translate([25+4.3-1,3,0.6-20]) cube([2,10,7]); // it's bit up because it helps with printing
 
     // motor mounting
     translate([25+4.3,20,-1]){
@@ -76,8 +77,9 @@ module z_bottom_holes()
 
 module z_bottom_right()
 {
-    difference()
+    mirror([0,0,1])rotate([0,0,-90])translate([0,+20,0])difference()
     {
+        mirror([0,1,0]) 
         difference()
         {
             z_bottom_base();
@@ -91,25 +93,24 @@ module z_bottom_right()
 
 module z_bottom_left()
 {
-    difference()
+    mirror([0,0,1])rotate([0,0,-90])translate([0,-20,0])difference()
     {
-        translate([0,-13,0]) mirror([0,1,0]) 
         difference()
         {
             z_bottom_base();
             z_bottom_fancy();
             z_bottom_holes();
         }
-        translate([7.5,-28.5,12]) rotate([90,180,90]) linear_extrude(height = 0.6) 
-        { text("R2",font = "helvetica:style=Bold", size=5, center=true); }
+        translate([7.5,-25,12]) rotate([90,180,90]) linear_extrude(height = 0.6) 
+        { text("R3",font = "helvetica:style=Bold", size=5, center=true); }
     }
 }
 
 
 
  
-z_bottom_right();
-z_bottom_left();
+translate([30,0,0])z_bottom_right();
+translate([-30,0,0])z_bottom_left();
  
 
 

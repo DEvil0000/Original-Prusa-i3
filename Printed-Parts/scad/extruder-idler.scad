@@ -54,7 +54,8 @@ module part()
         translate([-5.3,16.2,-33]) rotate([0,0,30]) cube([5,5,40]); 
         translate([-7.8,33.5,-33]) rotate([0,0,-30]) cube([5,5,40]); 
         
-        translate([-18,29,-17.6]) rotate([90,0,0]) rotate([0,90,0]) cylinder( h=10, r1=9, r2=6, $fn=6 );  
+        //translate([-18,29,-17.6]) rotate([90,0,0]) rotate([0,90,0]) cylinder( h=10, r1=9, r2=6, $fn=6 );  
+        #translate([-18,29+5,-17.6-4]) rotate([90,0,0]) cube([10,14,13.5]);
         
         // nice edges
         translate([-26,10,-2]) rotate([0,45,0]) cube([10,40,10]); 

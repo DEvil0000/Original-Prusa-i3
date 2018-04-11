@@ -135,7 +135,7 @@ difference()
             // bottom pulley space 
             difference()
             {
-                translate([-4,15,-30.5]) cube([26,6.5,30.5]);
+                translate([-4,15,-30.5]) cube([26,6,30.5]);
                 translate([-8,16.5,-36]) rotate([0,0,45]) cube([10,10,32]);
             }
             translate([-8,15,-4]) cube([30,6.5,4]);

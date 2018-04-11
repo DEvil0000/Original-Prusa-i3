@@ -18,19 +18,20 @@ module part()
             translate([-17,12,-31.5]) cube([8,34,25.0]);   
             
             // pulley holders
-            translate([-4,27,-22.75])  cylinder( h=1, r1=4, r2=3, $fn=30 ); 
-            translate([-4,27,-27])  cylinder( h=4.25, r=4, $fn=30 ); 
+            translate([-4.5,27,-22.75])  cylinder( h=1, r1=4, r2=3, $fn=30 ); 
+            translate([-4.5,27,-27])  cylinder( h=4.25, r=4, $fn=30 ); 
             translate([-14,22,-26.75]) cube([10.5,10,4]);   
             translate([-16.5,22,-6.5]) cube([13,10,3]);   
-            translate([-4,27,-6.5])  cylinder( h=3, r=4, $fn=30 ); 
-            translate([-4,27,-7.25])  cylinder( h=0.75, r1=3, r2=4, $fn=30 ); 
+            translate([-4.5,27,-6.5])  cylinder( h=3, r=4, $fn=30 ); 
+            translate([-4.5,27,-7.25])  cylinder( h=0.75, r1=3, r2=4, $fn=30 ); 
         }
 
         // motor rim cut
         translate([7,27,-32.75])  cylinder( h=6, r=18, $fn=30 ); 
         
         // axis
-        translate([-4,27,-32])  cylinder( h=40, r=1.5, $fn=30 ); 
+        translate([-4.5,27,-32])  cylinder( h=40, r=1.5, $fn=30 ); 
+        translate([-4.5,27,-32])  cylinder( h=9, d=5, $fn=30 ); 
     
         translate([-11.5,42.5,-32])  cylinder( h=30, r=1.7, $fn=30 ); 
         translate([-18,44,-32]) rotate([0,0,30]) cube([15,10,30]);   
@@ -55,7 +56,7 @@ module part()
         translate([-7.8,33.5,-33]) rotate([0,0,-30]) cube([5,5,40]); 
         
         //translate([-18,29,-17.6]) rotate([90,0,0]) rotate([0,90,0]) cylinder( h=10, r1=9, r2=6, $fn=6 );  
-        #translate([-18,29+5,-17.6-4]) rotate([90,0,0]) cube([10,14,13.5]);
+        translate([-18,29+5,-17.6-4]) rotate([90,0,0]) cube([10,7.5,13.5]);
         
         // nice edges
         translate([-26,10,-2]) rotate([0,45,0]) cube([10,40,10]); 
